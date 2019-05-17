@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Health : MonoBehaviour
@@ -22,7 +23,9 @@ public class Health : MonoBehaviour
 		currentHealth -= damageAmount;
 		if (currentHealth <= 0)
 			Die();
-	}
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
 
 	private void Die()
 	{
